@@ -21,7 +21,7 @@ class Search extends PureComponent {
     super(props);
 
     this.state = {
-      keyword: '',
+      keyword: props.defaultValue,
       expanded: false,
     };
     const { width } = Dimensions.get('window');
@@ -532,6 +532,7 @@ Search.propTypes = {
   /**
    * text input
    */
+  defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
   cancelTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   iconDelete: PropTypes.object,
@@ -572,6 +573,7 @@ Search.propTypes = {
 };
 
 Search.defaultProps = {
+  defaultValue: '',
   editable: true,
   blurOnSubmit: true,
   keyboardShouldPersist: false,
